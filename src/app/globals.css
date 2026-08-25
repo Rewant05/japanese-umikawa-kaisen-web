@@ -16,12 +16,6 @@
   --foreground: #2C2C2C; /* charcoal */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #151E29; /* navy */
-    --foreground: #F8F7F5; /* ivory */
-  }
-}
 
 body {
   background-color: var(--background);

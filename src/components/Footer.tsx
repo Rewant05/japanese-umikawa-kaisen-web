@@ -5,7 +5,7 @@ export default function Footer() {
     Company: [
       { name: "私たちについて", href: "/about" },
       { name: "提携漁師", href: "/fishermen" },
-      { name: "採用情報", href: "#" },
+      { name: "採用情報", href: "/recruitment" },
       { name: "お問い合わせ", href: "/contact" },
     ],
     Explore: [

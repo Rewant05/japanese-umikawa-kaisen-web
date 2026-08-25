@@ -3,12 +3,12 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen -mt-24">
       {/* Hero Section */}
-      <section className="relative h-[85vh] w-full flex items-center justify-center overflow-hidden">
+      <section className="relative h-[100vh] w-full flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0 bg-navy">
           <Image
-            src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?q=80&w=2070&auto=format&fit=crop"
+            src="/images/hero_waves_1787649888403.jpg"
             alt="日本の海の波"
             fill
             sizes="100vw"
@@ -26,11 +26,11 @@ export default function Home() {
           <p className="text-lg md:text-xl text-sand/90 font-light mb-10 max-w-2xl reveal-visible" style={{ transitionDelay: '0.2s' }}>
             日本の豊かな沿岸から、選び抜かれた旬の海鮮を。妥協のない品質でお届けします。
           </p>
-          <div className="flex gap-6 reveal-visible" style={{ transitionDelay: '0.4s' }}>
-            <Link href="/seafood" className="bg-vermilion text-white px-8 py-4 font-serif tracking-widest text-sm hover:bg-vermilion/90 transition-colors">
+          <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 sm:gap-6 reveal-visible" style={{ transitionDelay: '0.4s' }}>
+            <Link href="/seafood" className="bg-vermilion text-white w-full sm:w-auto px-8 py-4 font-serif tracking-widest text-sm hover:bg-vermilion/90 transition-colors text-center">
               海鮮一覧を見る
             </Link>
-            <Link href="/sourcing" className="border border-ivory text-ivory px-8 py-4 font-serif tracking-widest text-sm hover:bg-ivory hover:text-navy transition-colors">
+            <Link href="/sourcing" className="border border-ivory text-ivory w-full sm:w-auto px-8 py-4 font-serif tracking-widest text-sm hover:bg-ivory hover:text-navy transition-colors text-center">
               産地について
             </Link>
           </div>
@@ -45,7 +45,7 @@ export default function Home() {
             海川（UMIKAWA）では、真の贅沢は「産地」と「旬」にあると信じています。北海道、石川、九州など全国の代々続く漁師たちと直接連携し、日本の海の恵みを世界の最高級テーブルへとお届けします。
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?q=80&w=1974&auto=format&fit=crop"
+            src="/images/seafood_prep_1787649903363.jpg"
             alt="日本の海鮮調理"
             width={800}
             height={500}
@@ -70,9 +70,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "本マグロ", origin: "青森県 大間", img: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?q=80&w=1827&auto=format&fit=crop" },
-              { name: "エゾバフンウニ", origin: "北海道 利尻", img: "https://images.unsplash.com/photo-1662991060935-430b3562bb66?q=80&w=1964&auto=format&fit=crop" },
-              { name: "ボタンエビ", origin: "富山湾", img: "https://images.unsplash.com/photo-1629853900223-10d65a88e998?q=80&w=1974&auto=format&fit=crop" }
+              { name: "本マグロ", origin: "青森県 大間", img: "/images/tuna_1787649919528.jpg" },
+              { name: "エゾバフンウニ", origin: "北海道 利尻", img: "/images/uni_1787649975343.jpg" },
+              { name: "ボタンエビ", origin: "富山湾", img: "/images/shrimp_1787649988837.jpg" }
             ].map((item, i) => (
               <Link href="/seafood" key={i} className="group cursor-pointer block">
                 <div className="relative h-[60vh] md:h-[50vh] overflow-hidden mb-6 bg-navy">
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
           <div className="relative h-[70vh]">
             <Image
-              src="https://images.unsplash.com/photo-1534604973900-c4335533cb3f?q=80&w=2098&auto=format&fit=crop"
+              src="/images/fisherman_boat_1787650040349.jpg"
               alt="船上の漁師"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

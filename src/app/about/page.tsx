@@ -12,7 +12,7 @@ export default function About() {
 
       <section className="relative w-full h-[50vh] md:h-[70vh]">
         <Image
-          src="https://images.unsplash.com/photo-1544253139-44026600c064?q=80&w=2070&auto=format&fit=crop"
+          src="/images/fisherman_boat_1787650040349.jpg"
           alt="日本の伝統的な船"
           fill
           sizes="100vw"

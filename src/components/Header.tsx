@@ -26,6 +26,9 @@ export default function Header() {
     { name: "読み物", href: "/journal" },
   ];
 
+  // Determine if we need light text (only on home page when not scrolled and mobile menu is closed)
+  const useLightText = pathname === "/" && !isScrolled && !mobileMenuOpen;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
@@ -36,7 +39,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2 z-50 relative group">
-          <span className="font-serif text-2xl font-semibold tracking-widest text-navy group-hover:text-vermilion transition-colors">
+          <span className={`font-serif text-2xl font-semibold tracking-widest transition-colors ${useLightText ? "text-ivory group-hover:text-ivory/80" : "text-navy group-hover:text-vermilion"}`}>
             海川
           </span>
         </Link>
@@ -47,8 +50,12 @@ export default function Header() {
             <Link
               key={link.name}
               href={link.href}
-              className={`text-sm font-serif tracking-widest transition-colors hover:text-vermilion ${
-                pathname.startsWith(link.href) ? "text-vermilion font-medium" : "text-charcoal/80"
+              className={`text-sm font-serif tracking-widest transition-colors ${
+                useLightText
+                  ? "text-ivory/90 hover:text-white"
+                  : pathname.startsWith(link.href)
+                  ? "text-vermilion font-medium"
+                  : "text-charcoal/80 hover:text-vermilion"
               }`}
             >
               {link.name}
@@ -56,7 +63,11 @@ export default function Header() {
           ))}
           <Link
             href="/contact"
-            className="text-sm font-serif tracking-widest border border-navy px-5 py-2 hover:bg-navy hover:text-ivory transition-colors duration-300"
+            className={`text-sm font-serif tracking-widest border px-5 py-2 transition-colors duration-300 ${
+              useLightText
+                ? "border-ivory text-ivory hover:bg-ivory hover:text-navy"
+                : "border-navy text-navy hover:bg-navy hover:text-ivory"
+            }`}
           >
             お問い合わせ
           </Link>
@@ -64,7 +75,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden z-50 text-navy p-2"
+          className={`md:hidden z-50 p-2 transition-colors ${useLightText ? "text-ivory" : "text-navy"}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="メニュー切り替え"
         >
@@ -91,7 +102,7 @@ export default function Header() {
             <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 text-sm font-serif tracking-widest border border-navy px-8 py-3 hover:bg-navy hover:text-ivory transition-colors duration-300"
+              className="mt-4 text-sm font-serif tracking-widest border border-navy text-navy px-8 py-3 hover:bg-navy hover:text-ivory transition-colors duration-300"
             >
               お問い合わせ
             </Link>

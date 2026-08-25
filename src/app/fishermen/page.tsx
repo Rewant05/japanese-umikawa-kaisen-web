@@ -17,7 +17,7 @@ export default function Fishermen() {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="w-full md:w-1/2 h-[60vh] relative bg-navy">
             <Image
-              src="https://images.unsplash.com/photo-1544253139-44026600c064?q=80&w=2070&auto=format&fit=crop"
+              src="/images/fisherman_portrait_1787650059385.jpg"
               alt="北海道の漁師"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -40,7 +40,7 @@ export default function Fishermen() {
         <div className="flex flex-col md:flex-row-reverse gap-12 items-center">
           <div className="w-full md:w-1/2 h-[60vh] relative bg-navy">
             <Image
-              src="https://images.unsplash.com/photo-1534604973900-c4335533cb3f?q=80&w=2098&auto=format&fit=crop"
+              src="/images/ama_diver_1787650086917.jpg"
               alt="三重の海女"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
