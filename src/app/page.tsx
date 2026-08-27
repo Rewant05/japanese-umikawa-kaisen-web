@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen -mt-24">
       {/* Hero Section */}
-      <section className="relative h-[100vh] w-full flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden py-24">
         <div className="absolute inset-0 z-0 bg-navy">
           <Image
             src="/images/hero_waves_1787649888403.jpg"
@@ -20,10 +20,10 @@ export default function Home() {
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-ivory mb-6 tracking-widest leading-tight reveal-visible drop-shadow-lg">
-            日本海鮮の <br className="hidden md:block"/> 最高峰
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-ivory mb-6 tracking-widest leading-tight reveal-visible drop-shadow-lg">
+            日本海鮮の <br /> 最高峰
           </h1>
-          <p className="text-lg md:text-xl text-sand/90 font-light mb-10 max-w-2xl reveal-visible" style={{ transitionDelay: '0.2s' }}>
+          <p className="text-base sm:text-lg md:text-xl text-sand/90 font-light mb-10 max-w-2xl reveal-visible" style={{ transitionDelay: '0.2s' }}>
             日本の豊かな沿岸から、選び抜かれた旬の海鮮を。妥協のない品質でお届けします。
           </p>
           <div className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 sm:gap-6 reveal-visible" style={{ transitionDelay: '0.4s' }}>

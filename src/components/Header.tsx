@@ -84,29 +84,31 @@ export default function Header() {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 bg-ivory z-40 flex flex-col justify-center items-center transition-all duration-500 ease-in-out ${
+          className={`fixed inset-0 bg-ivory z-40 overflow-y-auto transition-all duration-500 ease-in-out ${
             mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
         >
-          <nav className="flex flex-col items-center gap-8">
-            {navLinks.map((link) => (
+          <div className="flex flex-col items-center justify-start min-h-full pt-32 pb-16 px-6">
+            <nav className="flex flex-col items-center gap-6 sm:gap-8 w-full">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xl sm:text-2xl font-serif tracking-widest text-navy hover:text-vermilion transition-colors"
+                >
+                  {link.name}
+                </Link>
+              ))}
               <Link
-                key={link.name}
-                href={link.href}
+                href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-2xl font-serif tracking-widest text-navy hover:text-vermilion transition-colors"
+                className="mt-6 text-sm font-serif tracking-widest border border-navy text-navy px-8 py-3 hover:bg-navy hover:text-ivory transition-colors duration-300"
               >
-                {link.name}
+                お問い合わせ
               </Link>
-            ))}
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="mt-4 text-sm font-serif tracking-widest border border-navy text-navy px-8 py-3 hover:bg-navy hover:text-ivory transition-colors duration-300"
-            >
-              お問い合わせ
-            </Link>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
